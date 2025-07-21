@@ -1,0 +1,114 @@
+.vacancy-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+    background: var(--light);
+}
+
+.vacancy-item {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.5s;
+}
+
+.vacancy-item:hover {
+    transform: translateY(-5px);
+}
+
+.vacancy-header {
+    background: #0086ED;
+    color: white;
+    padding: 20px;
+    height: 15%;
+}
+
+.vacancy-title {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.vacancy-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.vacancy-body {
+    padding: 20px;
+    height: 85%;
+}
+
+.vacancy-section {
+    margin-bottom: 15px;
+}
+
+.vacancy-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.vacancy-section ul {
+    padding-left: 20px;
+}
+
+.vacancy-section li {
+    margin-bottom: 5px;
+}
+
+.salary {
+    font-weight: bold;
+    color: white;
+}
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    background: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+}
+
+.contacts {
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 50px;
+}
+
+.contacts h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.contact-item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .vacancy-list {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,273 @@
+/* promo */
+.promo-img {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.promo-img-img {
+    width: 100%;
+}
+
+.promo-inner {
+    height: 100px;
+    width: 100%;
+    background: var(--light);
+    margin-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.promo-inner-img {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 75%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 2vh;
+}
+
+.shimano {
+    height: 50px;
+    object-fit: cover
+}
+
+/* promo2 */
+.promo2-inner {
+    background: var(--light);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 2vh;
+    justify-content: space-between;
+}
+
+.promo2-card {
+    width: 308px;
+    height: 220px;
+    background: white;
+    margin-bottom: 6vh;
+}
+
+.promo2-svg {
+    margin: 2vh;
+}
+
+.promo2-card .text {
+    margin-left: 2vh;
+    margin-top: 20px;
+}
+
+/* hits */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* reviews */
+.reviews {
+    margin-bottom: 4vh;
+}
+
+.line {
+    width: 195px;
+    height: 3px;
+    background: var(--primary);
+    margin: 23px auto;
+}
+
+.reviews-inner {
+    background: var(--light);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
+
+.reviews-card {
+    width: 30%;
+    min-height: 300px;
+    background: white;
+    display: grid;
+    margin-bottom: 2vh;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.reviews-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.reviews-card-block {
+    margin: 2vh
+}
+
+.reviews-card-block img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.rewies-card {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+.stars {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+/* news */
+.news {
+    margin-bottom: 4vh;
+}
+
+.news-inner {
+    background: var(--light);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2vh;
+}
+
+.news-card {
+    width: 308px;
+    min-height: 380px;
+    background: white;
+    margin-bottom: 2vh;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.5s, box-shadow 0.5s;
+    overflow: hidden;
+    position: relative;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.news-img {
+    overflow: hidden;
+    position: relative;
+}
+
+.news-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.news-card:hover .news-img img {
+    transform: scale(1.05);
+}
+
+.news-card-block {
+    margin: 2vh;
+}
+
+@media (max-width: 1320px) {
+    .promo-img {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .promo-img-img {
+        width: 100%;
+    }
+
+    .promo-inner {
+        height: 70px;
+        width: 100%;
+        background: white;
+        margin-top: 2vh;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .shimano,
+    .stels,
+    .merida,
+    .cube {
+        width: 100px;
+        height: 50px;
+        object-fit: contain;
+    }
+
+    /* promo2 */
+    .promo2-card {
+        width: 180px;
+        height: 220px;
+    }
+
+    .promo2-svg {
+        width: 60px;
+    }
+
+    .promo2-card .text {
+        margin-top: 10px;
+    }
+
+    .news-card {
+        width: 48%;
+    }
+
+    .news-img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .promo2-card {
+        width: 48%;
+        height: 220px;
+        margin-bottom: 2vh;
+    }
+
+    .promo2-svg {
+        width: 60px;
+    }
+
+    .promo2-card .text {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .shimano,
+    .stels,
+    .merida,
+    .cube {
+        width: 60px;
+    }
+
+    .promo2-card {
+        width: 100%;
+    }
+
+    /* reviews */
+    .reviews-card {
+        width: 100%;
+    }
+
+    /* news */
+    .news-card {
+        width: 100%;
+    }
+
+    .news-img {
+        width: 100%;
+    }
+}
