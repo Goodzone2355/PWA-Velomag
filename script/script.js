@@ -68,9 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Крестик в форме
     const xmark = document.querySelector('.fa-xmark');
-    console.log(xmark);
     const block = document.querySelector('.success');
-    console.log(block);
     xmark.addEventListener('click', function () {
         block.style.display = 'none';
     })
