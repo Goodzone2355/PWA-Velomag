@@ -23,21 +23,54 @@ const URLS_TO_CACHE = [
     '/offline.html'
 ];
 
+// Установка и кэширование
+self.addEventListener('install', event => {
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(cache => cache.addAll(URLS_TO_CACHE))
+            .then(() => self.skipWaiting())
+    );
+});
+
+// Активация и очистка старых кэшей
 self.addEventListener('activate', event => {
-    console.log("SW: activate");
+    event.waitUntil(
+        caches.keys().then(keys =>
+            Promise.all(
+                keys.map(key => key !== CACHE_NAME ? caches.delete(key) : null)
+            )
+        )
+    );
+    console.log('SW activated');
 });
 
-self.addEventListener('install', async event => {
-    const cache = await caches.open(CACHE_NAME);
-    await cache.addAll(URLS_TO_CACHE);
-});
-
+// Стратегия "Сначала кэш, потом сеть" с оффлайн-режимом
 self.addEventListener('fetch', event => {
-    console.log('Fetch', event.request);
-    event.respondWith(cacheFirst(event.request));
-});
+    // Пропускаем не-GET запросы
+    if (event.request.method !== 'GET') return;
 
-async function cacheFirst(request) {
-    const cached = await caches.match(request);
-    return cached ?? await fetch(request);
-} 
+    event.respondWith(
+        caches.match(event.request)
+            .then(cached => {
+                // 1. Пробуем кэш
+                if (cached) return cached;
+
+                // 2. Идём в сеть
+                return fetch(event.request)
+                    .then(response => {
+                        // Клонируем для кэширования
+                        const responseClone = response.clone();
+                        caches.open(CACHE_NAME)
+                            .then(cache => cache.put(event.request, responseClone));
+                        return response;
+                    })
+                    .catch(() => {
+                        // 3. Fallback для оффлайн-режима
+                        if (event.request.mode === 'navigate') {
+                            return caches.match('/offline.html');
+                        }
+                        return new Response('Оффлайн режим');
+                    });
+            })
+    );
+});
