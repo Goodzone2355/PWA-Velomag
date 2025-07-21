@@ -21,6 +21,10 @@ const URLS_TO_CACHE = [
     './img/promo/stels.png',
 ];
 
+self.addEventListener('activate', event => {
+    console.log("SW: activate");
+});
+
 self.addEventListener('install', async event => {
     const cache = await caches.open(CACHE_NAME);
     await cache.addAll(URLS_TO_CACHE);
