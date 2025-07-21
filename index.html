@@ -284,13 +284,12 @@
             </div>
         </div>
     </footer>
-        <script>
+    <script src="./script/script.js"></script>
+    <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js', {scope: '/' })
+            navigator.serviceWorker.register('/sw.js', { scope: '/' })
         }
     </script>
-    <script src="./script/script.js"></script>
-    <script src="./sw.js"></script>
 </body>
 
 </html>
