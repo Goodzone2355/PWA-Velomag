@@ -14,10 +14,14 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css//footer.css">
     <link rel="manifest" href="./manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js', { scope: '/' })
+        }
+    </script>
 </head>
 
 <body>
-
     <header class="header">
         <div class="header-container">
             <a href="./index.html" class="logo">
@@ -285,11 +289,6 @@
         </div>
     </footer>
     <script src="./script/script.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js', { scope: '/' })
-        }
-    </script>
 </body>
 
 </html>
