@@ -1,10 +1,10 @@
 const CACHE_NAME = 'cache-first-v1';
 const URLS_TO_CACHE = [
-    './index.html',
-    './about.html',
-    './contacts.html',
-    './job.html',
-    './payment.html',
+    'index.html',
+    'about.html',
+    'contacts.html',
+    'job.html',
+    'payment.html',
     './css/about.css',
     './css/card.css',
     './css/contacts.css',
