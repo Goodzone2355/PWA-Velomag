@@ -20,7 +20,7 @@ const URLS_TO_CACHE = [
     '/img/promo/cube.png',
     '/img/promo/shimano.png',
     '/img/promo/stels.png',
-    '/offline.html'
+    '/offline.html' // Добавьте эту страницу для fallback
 ];
 
 // Установка и кэширование
