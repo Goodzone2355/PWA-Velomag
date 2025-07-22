@@ -4,7 +4,7 @@ const URLS_TO_CACHE = [
     './about.html',
     './contacts.html',
     './job.html',
-    '/payment.html',
+    './payment.html',
     './css/about.css',
     './css/card.css',
     './css/contacts.css',
