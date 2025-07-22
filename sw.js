@@ -19,7 +19,6 @@ const URLS_TO_CACHE = [
     './img/promo/cube.png',
     './img/promo/shimano.png',
     './img/promo/stels.png',
-    './offline.html' // Добавьте эту страницу для fallback
 ];
 
 self.addEventListener('activate', event => {
