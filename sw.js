@@ -25,9 +25,16 @@ const URLS_TO_CACHE = [
 self.addEventListener('activate', event => {
 });
 
-self.addEventListener('install', async event => {
-    const cache = await caches.open(CACHE_NAME);
-    await cache.addAll(URLS_TO_CACHE);
+self.addEventListener('install', event => {
+    event.waitUntil(
+        caches.open(CACHE_NAME)
+            .then(cache => {
+                return cache.addAll(URLS_TO_CACHE);
+            })
+            .catch(error => {
+                console.error('Cache addAll failed:', error);
+            })
+    );
 });
 
 self.addEventListener('fetch', event => {
