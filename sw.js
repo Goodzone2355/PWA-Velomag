@@ -23,7 +23,6 @@ const URLS_TO_CACHE = [
 ];
 
 self.addEventListener('activate', event => {
-    console.log("SW: activate");
 });
 
 self.addEventListener('install', async event => {
@@ -32,7 +31,6 @@ self.addEventListener('install', async event => {
 });
 
 self.addEventListener('fetch', event => {
-    console.log('Fetch', event.request);
     event.respondWith(cacheFirst(event.request));
 });
 
